@@ -61,7 +61,7 @@ while ( $query2->have_posts() ) {
     echo "<div class='heure08'>";  
     echo "<p>".get_the_title()."</p>";
     echo "<p>".get_post_field("post_name")."</p>";//.get_the_author_meta( 'display_name', $post->post_author ). "</p></li>";
-    echo "</div>";
+    echo "</div>" ;
 }
 
 echo "</div>";
