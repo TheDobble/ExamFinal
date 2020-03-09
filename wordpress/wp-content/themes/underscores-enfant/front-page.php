@@ -17,8 +17,13 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 } else {
 	get_template_part( 'index' );
 }
-////////////////////NOUVELLE
-//echo "<h2>" . category_description(get_category_by_slug('conference')) . "</h2>";
+
+echo "<nav><ul>";
+
+    echo "<li><a class='menu' href='http://127.0.0.1/2020-veille/wordpress/category/atelier/'>Ateliers</a></li>";
+    echo "<li><a class='menu' href='http://127.0.0.1/2020-veille/wordpress/category/nouvelle/'>Nouvelles</a></li>";
+    echo "<li><a class='menu' href='http://127.0.0.1/2020-veille/wordpress/category/cours/'>Cours</a></li>";
+echo "</nav><ul>";
 
 $args = array(
     "category_name" => "atelier",
@@ -30,6 +35,7 @@ $args = array(
 $query1 = new WP_Query( $args );
 
  
+ echo "<h2>" . category_description(get_category_by_slug('atelier')) . "</h2>";
 
 // The Loop
 echo "<ol>"; 
@@ -71,7 +77,7 @@ $query2 = new WP_Query( $args2 );
 // Restore original Post Data
 //wp_reset_postdata();
 
-get_footer();
+//get_footer();
 // The Query
 
 ?>

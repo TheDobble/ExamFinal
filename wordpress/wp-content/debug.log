@@ -10685,3 +10685,4 @@ Stack trace:
 #2 F:\Hiver_2020\Veille\Xamp\htdocs\2020-veille\wordpress\index.php(17): require('F:\\Hiver_2020\\V...')
 #3 {main}
   thrown in F:\Hiver_2020\Veille\Xamp\htdocs\2020-veille\wordpress\wp-content\themes\underscores-enfant\front-page.php on line 40
+[09-Mar-2020 13:28:37 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ';' or ',' in F:\Hiver_2020\Veille\Xamp\htdocs\2020-veille\wordpress\wp-content\themes\underscores-enfant\front-page.php on line 25

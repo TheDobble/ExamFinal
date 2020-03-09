@@ -1,0 +1,9 @@
+.menu{
+    display : flex;
+    flex-direction: row;
+
+}
+
+ul>li>.menu{
+    color: white;
+}
