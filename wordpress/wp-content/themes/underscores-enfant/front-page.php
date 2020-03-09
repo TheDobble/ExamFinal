@@ -18,12 +18,12 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 	get_template_part( 'index' );
 }
 
-echo "<nav><ul>";
+echo "<nav><ul class='menu_container'>";
 
     echo "<li><a class='menu' href='http://127.0.0.1/2020-veille/wordpress/category/atelier/'>Ateliers</a></li>";
     echo "<li><a class='menu' href='http://127.0.0.1/2020-veille/wordpress/category/nouvelle/'>Nouvelles</a></li>";
     echo "<li><a class='menu' href='http://127.0.0.1/2020-veille/wordpress/category/cours/'>Cours</a></li>";
-echo "</nav><ul>";
+echo "</nav></ul>";
 
 $args = array(
     "category_name" => "atelier",
