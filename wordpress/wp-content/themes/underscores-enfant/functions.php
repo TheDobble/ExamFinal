@@ -24,5 +24,5 @@ function extraire_evenement( $query ) {
 }
 add_action( 'pre_get_posts', 'extraire_evenement' );
 
-
+add_action('get_post', 'Menu');
 

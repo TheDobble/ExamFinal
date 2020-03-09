@@ -33,51 +33,37 @@ $args = array(
     
 );
 $query1 = new WP_Query( $args );
-
  
  echo "<h2>" . category_description(get_category_by_slug('atelier')) . "</h2>";
 
-// The Loop
 echo "<ol>"; 
 while ( $query1->have_posts() ) {
     $query1->the_post();
-    $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); 
-    //echo "<img src='". $featured_img_url."' class='ImgThumbNail'>";
-    echo "<li><p>" . get_the_title()."____".get_post_field("post_name")."___".get_the_author_meta( 'display_name', $post->post_author ). "</p></li>";
+    echo "<li><p>" . get_the_title()."____<span style='color:red'>".get_post_field("post_name")."</span> <span style='color:blue'>___".get_the_author_meta( 'display_name', $post->post_author ). "</span></p></li>";
 
-    //echo "<p class='excerpt'>" . get_the_excerpt() . "</p>";
 
 }
 echo "</ol>";
-/* Restore original Post Data 
- * NB: Because we are using new WP_Query we aren't stomping on the 
- * original $wp_query and it does not need to be reset with 
- * wp_reset_query(). We just need to set the post data back up with
- * wp_reset_postdata().
- */
+
 wp_reset_postdata();
 
- 
- /*The 2nd Query (without global var) */
- //echo "<h2>" . category_description(get_category_by_slug('nouvelle')) . "</h2>";
- /*$args2 = array(
-    "category_name" => "nouvelle",
-    "posts_per_page" => 3
- );
-$query2 = new WP_Query( $args2 );
- */
-// The 2nd Loop
-/*while ( $query2->have_posts() ) {
-    $query2->the_post();
-    $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); 
-    echo "<img src='". $featured_img_url."' class='ImgThumbNail'>";
-    echo '<a>' . get_the_title( $query2->post->ID ) . '</a>';
-}*/
- 
-// Restore original Post Data
-//wp_reset_postdata();
+echo "<div class='wrapper'>";
+$args02 = array(
+    "category_name" => "atelier",
+    "posts_per_page" => -1,
+    "orderby" => "title",
+    "order" => "asc", 
 
-//get_footer();
-// The Query
+);
+$query2 = new WP_Query( $args02 );
+while ( $query2->have_posts() ) {
+    $query2->the_post();
+    echo "<div class='heure08'>";  
+    echo "<p>".get_the_title()."</p>";
+    echo "<p>".get_post_field("post_name")."</p>";//.get_the_author_meta( 'display_name', $post->post_author ). "</p></li>";
+    echo "</div>";
+}
+
+echo "</div>";
 
 ?>

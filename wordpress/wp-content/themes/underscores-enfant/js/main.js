@@ -1,22 +1,13 @@
 // let collectionBtnNouvelle = 
 // let collectionNouvelle = 
-console.log(collectionBtnNouvelle.length)
-if (collectionBtnNouvelle)
-{
-    for (let btn of collectionBtnNouvelle){
-            console.log(btn.id)
-            btn.addEventListener('click',Ajax)
-    }
-}
 
-
-function Ajax(evt) {
+function Menu(evt) {
     
     //  instructions ici
 
     let maRequete = new XMLHttpRequest();
     console.log(maRequete)
-    maRequete.open('GET', 'http://localhost/2020-veille/wp-json/wp/v2/posts); // modifier ici
+    maRequete.open('GET', 'http://127.0.0.1/2020-veille/wordpress/category/atelier/'); // modifier ici
     maRequete.onload = function () {
         console.log(maRequete)
         if (maRequete.status >= 200 && maRequete.status < 400) {
@@ -24,6 +15,7 @@ function Ajax(evt) {
             console.log(evt.target.dataset.checked)
             // instructions ici
             creationHTML(data);  // paramètres à ajouter
+            
         } else {
             console.log('La connexion est faite mais il y a une erreur')
         }
@@ -36,16 +28,20 @@ function Ajax(evt) {
 
     // instructions à ajouter
 
-}
 ///////////////////////////////////////////////////////
 
 function creationHTML(postsData){
-    let monHtmlString = '';
-    for (elm of postsData) {
+    let monHtmlString = "<nav><ul class='menu_container'>";
+    "<li><a class='menu' href='http://127.0.0.1/2020-veille/wordpress/category/atelier/'>Ateliers</a></li>";
+    "<li><a class='menu' href='http://127.0.0.1/2020-veille/wordpress/category/nouvelle/'>Nouvelles</a></li>";
+    "<li><a class='menu' href='http://127.0.0.1/2020-veille/wordpress/category/cours/'>Cours</a></li>";
+"</nav></ul>";
+    /*for (elm of postsData) {
         monHtmlString += '<h2>' + elm.title.rendered + '</h2>'
         monHtmlString += elm.content.rendered;
-    }
-    contenuNouvelle.innerHTML = monHtmlString; 
+    }*/
+    getElementbyType('body').appendChild(monHtmlString);
+    //contenuNouvelle.innerHTML = monHtmlString; 
 }
 
 
