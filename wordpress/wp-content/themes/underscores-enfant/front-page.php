@@ -22,7 +22,9 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 $args = array(
     "category_name" => "atelier",
-    "posts_per_page" => 10
+    "posts_per_page" => -1,
+    "orderby" => "title",
+    "order" => "asc"
     
 );
 $query1 = new WP_Query( $args );
@@ -35,7 +37,7 @@ while ( $query1->have_posts() ) {
     $query1->the_post();
     $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); 
     //echo "<img src='". $featured_img_url."' class='ImgThumbNail'>";
-    echo "<li><p>" . get_the_title()." le ".get_the_date(). "</p></li>";
+    echo "<li><p>" . get_the_title()."____".get_post_field("post_name")."___".get_the_author_meta( 'display_name', $post->post_author ). "</p></li>";
 
     //echo "<p class='excerpt'>" . get_the_excerpt() . "</p>";
 

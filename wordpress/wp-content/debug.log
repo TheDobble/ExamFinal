@@ -10676,3 +10676,12 @@ Stack trace:
 [09-Mar-2020 12:56:51 UTC] PHP Notice:  Trying to get property 'term_id' of non-object in F:\Hiver_2020\Veille\Xamp\htdocs\2020-veille\wordpress\wp-includes\class-wp-query.php on line 3695
 [09-Mar-2020 12:56:51 UTC] PHP Notice:  Trying to get property 'name' of non-object in F:\Hiver_2020\Veille\Xamp\htdocs\2020-veille\wordpress\wp-includes\class-wp-query.php on line 3697
 [09-Mar-2020 12:56:51 UTC] PHP Notice:  Trying to get property 'slug' of non-object in F:\Hiver_2020\Veille\Xamp\htdocs\2020-veille\wordpress\wp-includes\class-wp-query.php on line 3699
+[09-Mar-2020 13:18:27 UTC] PHP Parse error:  syntax error, unexpected 'get_post_field' (T_STRING), expecting ';' or ',' in F:\Hiver_2020\Veille\Xamp\htdocs\2020-veille\wordpress\wp-content\themes\underscores-enfant\front-page.php on line 40
+[09-Mar-2020 13:19:08 UTC] PHP Parse error:  syntax error, unexpected 'get_post_field' (T_STRING), expecting ';' or ',' in F:\Hiver_2020\Veille\Xamp\htdocs\2020-veille\wordpress\wp-content\themes\underscores-enfant\front-page.php on line 40
+[09-Mar-2020 13:20:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_author() in F:\Hiver_2020\Veille\Xamp\htdocs\2020-veille\wordpress\wp-content\themes\underscores-enfant\front-page.php:40
+Stack trace:
+#0 F:\Hiver_2020\Veille\Xamp\htdocs\2020-veille\wordpress\wp-includes\template-loader.php(98): include()
+#1 F:\Hiver_2020\Veille\Xamp\htdocs\2020-veille\wordpress\wp-blog-header.php(19): require_once('F:\\Hiver_2020\\V...')
+#2 F:\Hiver_2020\Veille\Xamp\htdocs\2020-veille\wordpress\index.php(17): require('F:\\Hiver_2020\\V...')
+#3 {main}
+  thrown in F:\Hiver_2020\Veille\Xamp\htdocs\2020-veille\wordpress\wp-content\themes\underscores-enfant\front-page.php on line 40
